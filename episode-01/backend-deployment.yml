@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: backend-episode-01
 spec:
-  replicas: 1
+  replicas: 3 # Increasing the number of replicas
   selector:
     matchLabels:
       app: backend-episode-01
