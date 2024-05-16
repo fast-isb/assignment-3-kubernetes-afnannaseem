@@ -23,6 +23,7 @@ kind: Service
 metadata:
   name: frontend-episode-03
 spec:
+  type: NodePort
   selector:
     app: frontend-episode-03
   ports:
