@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-episode-04
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-episode-04
+  template:
+    metadata:
+      labels:
+        app: frontend-episode-04
+    spec:
+      containers:
+      - name: frontend
+        image: afnannaseem837/mern-episode-04-frontend:latest
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-episode-04
+spec:
+  selector:
+    app: frontend-episode-04
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
